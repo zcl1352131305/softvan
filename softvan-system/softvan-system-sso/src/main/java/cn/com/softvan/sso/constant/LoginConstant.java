@@ -1,0 +1,11 @@
+package cn.com.softvan.sso.constant;
+
+/**
+ * Created with IntelliJ IDEA.
+ * User: lhl
+ * Date: 2017/06/28
+ * Time: 15:00
+ */
+public class LoginConstant {
+    public static final String key = "MIICdQIBADANBgkqhkiG9w0BAQEFAASCAl8wggJbAgEAAoGBAIGKnnOJLcvpxdvWKudg5BFp4AbjeiWqzmki786gfOnDtKaxQMrCf0I46GogZoN2YBHtYycNwqN4emyzPkDjDlMzmSUXOPuCGy/auXqdQaNqm/d/SRtUyG94II5isrdNzOvRX3z1ioGkcYjCQNgj42jNsso4VC9nT9KHdhRmRs+rAgMBAAECgYBD6Z5ER+igfMBkDhWUE/G9R1pRgjRpRvDLoatDElQqYZV1xnuHUQxSdW8zJCVaSlb3TxKqSMZ/2QulrRq3/dFmAUZP5TuniEHKK5Nhyv/MJhI5xFJJ+WL6KBOaVjE0jbzI+4+W+gvJrYcjwgg8Q/04au/cYLhTqlc3XxElCYnXoQJBAMkhEipZ39I5CnDE605QIIbeEszBi5YAAEyfs+trRQaq9m6Z+FN1T2EUXlNq3WJ54hD9CUNRTLf5FR/KKf1JJDkCQQCk4dbI14/kkROYjpNnT6Nco2JRAtAjiuhb/vcYEvxw/z8iAOnCn3VXfYXsBuKoTmqs+LLAUBblcOy3aGjCJHsDAkADsrT3zGE+J0hW3HgLH5QJhsnHtANSBbv7rLANMxK41ankTLZxKmYEPfCiDgP2DJGoiE6ES1lixJSr2fa9rnuZAkBC1sYh/rh3GJSQCGQawj7gA9+MJY7Iibvt5yq1mKS7Dc3C9AnO+qMvx1OtvZDOV5OI8PxNV2ogsqlTJEErSmyPAkB3ezbyoW/JUeGW9x7rFHPkC69uh8Vockh0Hplhv4ChpPIn1dUmwDE3/6U1HS0kLm3OK5eJzeyYyuo4oxra5Xf8";
+}

@@ -1,0 +1,14 @@
+/*
+ * @ClassName IecModuleObjectNameService
+ * @Description
+ * @version 1.0
+ * @Date ecModuleDate
+ */
+package ecModuleBasePackage.service.ecModulePackage;
+
+import ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName;
+import ecModuleBasePackage.service.IBaseService;
+
+public interface IecModuleObjectNameService extends IBaseService<ecModuleObjectName> {
+
+}

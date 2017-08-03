@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/softvan.iml" filepath="$PROJECT_DIR$/softvan.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-code/softvan-code.iml" filepath="$PROJECT_DIR$/softvan-code/softvan-code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-common/softvan-common.iml" filepath="$PROJECT_DIR$/softvan-common/softvan-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-file/softvan-file.iml" filepath="$PROJECT_DIR$/softvan-file/softvan-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-file/softvan-file-api/softvan-file-api.iml" filepath="$PROJECT_DIR$/softvan-file/softvan-file-api/softvan-file-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-file/softvan-file-mapper/softvan-file-mapper.iml" filepath="$PROJECT_DIR$/softvan-file/softvan-file-mapper/softvan-file-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-file/softvan-file-model/softvan-file-model.iml" filepath="$PROJECT_DIR$/softvan-file/softvan-file-model/softvan-file-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-file/softvan-file-service/softvan-file-service.iml" filepath="$PROJECT_DIR$/softvan-file/softvan-file-service/softvan-file-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-frame/softvan-frame.iml" filepath="$PROJECT_DIR$/softvan-frame/softvan-frame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-rest/softvan-rest.iml" filepath="$PROJECT_DIR$/softvan-rest/softvan-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-api/softvan-system-api.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-api/softvan-system-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-auth/softvan-system-auth.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-auth/softvan-system-auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-mapper/softvan-system-mapper.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-mapper/softvan-system-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-model/softvan-system-model.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-model/softvan-system-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-service/softvan-system-service.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-service/softvan-system-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-system/softvan-system-sso/softvan-system-sso.iml" filepath="$PROJECT_DIR$/softvan-system/softvan-system-sso/softvan-system-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat.iml" filepath="$PROJECT_DIR$/softvan-wechat/softvan-wechat.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-api/softvan-wechat-api.iml" filepath="$PROJECT_DIR$/softvan-wechat/softvan-wechat-api/softvan-wechat-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-mapper/softvan-wechat-mapper.iml" filepath="$PROJECT_DIR$/softvan-wechat/softvan-wechat-mapper/softvan-wechat-mapper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-model/softvan-wechat-model.iml" filepath="$PROJECT_DIR$/softvan-wechat/softvan-wechat-model/softvan-wechat-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-service/softvan-wechat-service.iml" filepath="$PROJECT_DIR$/softvan-wechat/softvan-wechat-service/softvan-wechat-service.iml" />
+    </modules>
+  </component>
+</project>

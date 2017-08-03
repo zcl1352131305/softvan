@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.softvan.dao.wechat.WechatUserInfoMapper" >
+
+    <sql id="Base_Column_List" >
+        t1.id as id, 
+		t1.open_id as openId,
+		t1.union_id as unionId,
+		t1.nick_name as nickName,
+		t1.sex as sex,
+		t1.city as city,
+		t1.country as country,
+		t1.province as province,
+		t1.language as language,
+		t1.head_img_url as headImgUrl,
+		t1.subscribe_time as subscribeTime,
+		t1.subscribe as subscribe,
+		t1.remark as remark,
+		t1.group_id as groupId,
+
+        t1.date_created as dateCreated, 
+        t1.create_id as createId, 
+        t1.create_ip as createIp, 
+        t1.date_updated as dateUpdated, 
+        t1.update_id as updateId, 
+        t1.update_ip as updateIp, 
+        t1.version as version,
+        t1.del_flag as delFlag
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="cn.com.softvan.model.wechat.WechatUserInfo" parameterType="java.lang.String" >
+	select
+	<include refid="Base_Column_List" />
+	from t_wechat_user_info t1
+	where t1.id = #{id}
+</select>
+
+
+	<select id="selectByOpenId" resultType="cn.com.softvan.model.wechat.WechatUserInfo" parameterType="java.lang.String" >
+		select
+		<include refid="Base_Column_List" />
+		from t_wechat_user_info t1
+		where t1.open_id = #{openId}
+		limit 0,1;
+	</select>
+
+    <select id="selectList" resultType="cn.com.softvan.model.wechat.WechatUserInfo" parameterType="cn.com.softvan.model.wechat.WechatUserInfo" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_wechat_user_info t1
+        where t1.del_flag = '0'
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from t_wechat_user_info
+        where id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="cn.com.softvan.model.wechat.WechatUserInfo" >
+        insert into t_wechat_user_info (
+
+			open_id,
+			union_id,
+			nick_name,
+			sex,
+			city,
+			country,
+			province,
+			language,
+			head_img_url,
+			subscribe_time,
+			subscribe,
+			remark,
+			group_id,
+
+            date_created, 
+            create_id, 
+            create_ip, 
+            date_updated, 
+            update_id, 
+            update_ip, 
+            version,
+            del_flag
+            )
+        values (
+
+			#{openId},
+			#{unionId},
+			#{nickName},
+			#{sex},
+			#{city},
+			#{country},
+			#{province},
+			#{language},
+			#{headImgUrl},
+			#{subscribeTime},
+			#{subscribe},
+			#{remark},
+			#{groupId},
+
+            now(), 
+            #{createId}, 
+            #{createIp}, 
+            now(), 
+            #{updateId}, 
+            #{updateIp}, 
+            0,
+            0
+            )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.com.softvan.model.wechat.WechatUserInfo" >
+        update t_wechat_user_info set 
+		<if test="openId != null" >
+			open_id = #{openId},
+		</if>
+		<if test="unionId != null" >
+			union_id = #{unionId},
+		</if>
+		<if test="nickName != null" >
+			nick_name = #{nickName},
+		</if>
+		<if test="sex != null" >
+			sex = #{sex},
+		</if>
+		<if test="city != null" >
+			city = #{city},
+		</if>
+		<if test="country != null" >
+			country = #{country},
+		</if>
+		<if test="province != null" >
+			province = #{province},
+		</if>
+		<if test="language != null" >
+			language = #{language},
+		</if>
+		<if test="headImgUrl != null" >
+			head_img_url = #{headImgUrl},
+		</if>
+		<if test="subscribeTime != null" >
+			subscribe_time = #{subscribeTime},
+		</if>
+		<if test="subscribe != null" >
+			subscribe = #{subscribe},
+		</if>
+		<if test="remark != null" >
+			remark = #{remark},
+		</if>
+		<if test="groupId != null" >
+			group_id = #{groupId},
+		</if>
+
+        <if test="updateId != null" >
+            update_id = #{updateId},
+        </if>
+        <if test="updateIp != null" >
+            update_ip = #{updateIp},
+        </if>
+        <if test="delFlag != null" >
+            del_flag = #{delFlag},
+        </if>
+        version = version + 1,
+        date_updated = now()
+        where id = #{id}
+    </update>
+</mapper>

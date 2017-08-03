@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>cn.com.softvan.frame</groupId>
+        <artifactId>softvan-frame</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath></relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.softvan.file</groupId>
+    <artifactId>softvan-file</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>softvan-file-model</module>
+        <module>softvan-file-mapper</module>
+        <module>softvan-file-service</module>
+        <module>softvan-file-api</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.softvan.common</groupId>
+            <artifactId>softvan-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="softvan-code" />
+        <module name="softvan-common" />
+        <module name="softvan-file-api" />
+        <module name="softvan-file-mapper" />
+        <module name="softvan-file-model" />
+        <module name="softvan-file-service" />
+        <module name="softvan-rest" />
+        <module name="softvan-system-api" />
+        <module name="softvan-system-auth" />
+        <module name="softvan-system-mapper" />
+        <module name="softvan-system-model" />
+        <module name="softvan-system-service" />
+        <module name="softvan-system-sso" />
+        <module name="softvan-wechat-api" />
+        <module name="softvan-wechat-mapper" />
+        <module name="softvan-wechat-model" />
+        <module name="softvan-wechat-service" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="softvan" target="1.8" />
+      <module name="softvan-code" target="1.8" />
+      <module name="softvan-common" target="1.8" />
+      <module name="softvan-file" target="1.8" />
+      <module name="softvan-file-api" target="1.8" />
+      <module name="softvan-file-mapper" target="1.8" />
+      <module name="softvan-file-model" target="1.8" />
+      <module name="softvan-file-service" target="1.8" />
+      <module name="softvan-frame" target="1.8" />
+      <module name="softvan-rest" target="1.8" />
+      <module name="softvan-system" target="1.8" />
+      <module name="softvan-system-api" target="1.8" />
+      <module name="softvan-system-auth" target="1.8" />
+      <module name="softvan-system-mapper" target="1.8" />
+      <module name="softvan-system-model" target="1.8" />
+      <module name="softvan-system-service" target="1.8" />
+      <module name="softvan-system-sso" target="1.8" />
+      <module name="softvan-wechat" target="1.8" />
+      <module name="softvan-wechat-api" target="1.8" />
+      <module name="softvan-wechat-mapper" target="1.8" />
+      <module name="softvan-wechat-model" target="1.8" />
+      <module name="softvan-wechat-service" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

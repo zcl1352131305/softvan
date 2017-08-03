@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/softvan-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-file/softvan-file-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-file/softvan-file-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-file/softvan-file-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-file/softvan-file-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-frame" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-rest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-auth" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-service" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-system/softvan-system-sso" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-wechat" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-mapper" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-model" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/softvan-wechat/softvan-wechat-service" charset="UTF-8" />
+  </component>
+</project>

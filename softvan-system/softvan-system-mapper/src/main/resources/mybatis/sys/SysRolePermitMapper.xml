@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.softvan.dao.sys.SysRolePermitMapper" >
+
+    <sql id="Base_Column_List" >
+        t1.id as id, 
+        t1.role_id as roleId, 
+        t1.permit_id as permitId, 
+        t1.company_id as companyId, 
+        t1.date_created as dateCreated, 
+        t1.create_id as createId, 
+        t1.create_ip as createIp, 
+        t1.date_updated as dateUpdated, 
+        t1.update_id as updateId, 
+        t1.update_ip as updateIp, 
+        t1.version as version, 
+        t1.del_flag as delFlag
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="cn.com.softvan.model.sys.SysRolePermit" parameterType="java.lang.Integer" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_sys_role_permit t1
+        where t1.id = #{id}
+    </select>
+
+    <select id="selectList" resultType="cn.com.softvan.model.sys.SysRolePermit" parameterType="cn.com.softvan.model.sys.SysRolePermit" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_sys_role_permit t1
+        where t1.del_flag = '0'
+    </select>
+
+    <!--返回某个应用所有的权限与角色关系-->
+    <select id="selectAllPermit" resultType="cn.com.softvan.model.sys.SysRolePermit" parameterType="cn.com.softvan.model.sys.SysRolePermit" >
+        select
+          t1.role_id as "roleId",
+          t2.url as "url"
+        from t_sys_role_permit t1 , t_sys_permit t2
+        where    t1.permit_id = t2.id
+        <if test="companyId != null">
+            and t1.company_id = #{companyId}
+        </if>
+        and t1.del_flag = '0'
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+        delete from t_sys_role_permit
+        where id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="cn.com.softvan.model.sys.SysRolePermit" >
+        insert into t_sys_role_permit (id, 
+            role_id, 
+            permit_id, 
+            company_id, 
+            date_created, 
+            create_id, 
+            create_ip, 
+            date_updated, 
+            update_id, 
+            update_ip, 
+            version, 
+            del_flag
+            )
+        values (#{id}, 
+            #{roleId}, 
+            #{permitId}, 
+            #{companyId}, 
+            now(), 
+            #{createId}, 
+            #{createIp}, 
+            now(), 
+            #{updateId}, 
+            #{updateIp}, 
+            0, 
+            0
+            )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.com.softvan.model.sys.SysRolePermit" >
+        update t_sys_role_permit set 
+        <if test="roleId != null" >
+            role_id = #{roleId},
+        </if>
+        <if test="permitId != null" >
+            permit_id = #{permitId},
+        </if>
+        <if test="companyId != null" >
+            company_id = #{companyId},
+        </if>
+        <if test="updateId != null" >
+            update_id = #{updateId},
+        </if>
+        <if test="updateIp != null" >
+            update_ip = #{updateIp},
+        </if>
+        <if test="delFlag != null" >
+            del_flag = #{delFlag},
+        </if>
+        version = version + 1,
+        date_updated = now()
+        where id = #{id}
+    </update>
+</mapper>

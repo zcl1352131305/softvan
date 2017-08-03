@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="ecModuleBasePackage.dao.ecModulePackage.ecModuleObjectNameMapper" >
+
+    <sql id="Base_Column_List" >
+        t1.id as id, 
+ecModuleBaseColumnList
+        t1.date_created as dateCreated, 
+        t1.create_id as createId, 
+        t1.create_ip as createIp, 
+        t1.date_updated as dateUpdated, 
+        t1.update_id as updateId, 
+        t1.update_ip as updateIp, 
+        t1.version as version,
+        t1.del_flag as delFlag
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName" parameterType="java.lang.String" >
+        select 
+        <include refid="Base_Column_List" />
+        from ecModuleTable t1
+        where t1.id = #{id}
+    </select>
+
+    <select id="selectList" resultType="ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName" parameterType="ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName" >
+        select 
+        <include refid="Base_Column_List" />
+        from ecModuleTable t1
+        where t1.del_flag = '0'
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from ecModuleTable
+        where id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName" >
+        insert into ecModuleTable (
+            id,
+ecModuleInsertTableColumn
+            date_created, 
+            create_id, 
+            create_ip, 
+            date_updated, 
+            update_id, 
+            update_ip, 
+            version,
+            del_flag
+            )
+        values (
+            #{id},
+ecModuleInsertTableParam
+            now(), 
+            #{createId}, 
+            #{createIp}, 
+            now(), 
+            #{updateId}, 
+            #{updateIp}, 
+            0,
+            0
+            )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName" >
+        update ecModuleTable set 
+ecModuleUpdateSelective
+        <if test="updateId != null" >
+            update_id = #{updateId},
+        </if>
+        <if test="updateIp != null" >
+            update_ip = #{updateIp},
+        </if>
+        <if test="delFlag != null" >
+            del_flag = #{delFlag},
+        </if>
+        version = version + 1,
+        date_updated = now()
+        where id = #{id}
+    </update>
+</mapper>

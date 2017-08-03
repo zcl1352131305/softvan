@@ -1,0 +1,18 @@
+/*
+ * @ClassName ecModuleObjectName
+ * @Description
+ * @version 1.0
+ * @Date ecModuleDate
+ */
+package ecModuleBasePackage.dao.ecModulePackage;
+
+import ecModuleBasePackage.dao.IBaseMapper;
+import ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName;
+import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
+
+@Mapper
+@Repository
+public interface ecModuleObjectNameMapper extends IBaseMapper<ecModuleObjectName> {
+
+}

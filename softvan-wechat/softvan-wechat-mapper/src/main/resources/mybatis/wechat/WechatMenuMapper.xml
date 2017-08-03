@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.softvan.dao.wechat.WechatMenuMapper" >
+
+    <sql id="Base_Column_List" >
+        t1.id as id, 
+		t1.type as `type`,
+		t1.name as `name`,
+		t1.key as `key`,
+		t1.url as url,
+		t1.media_id as mediaId,
+		t1.appid as appid,
+		t1.pagepath as pagepath,
+		t1.parent as parent,
+		t1.sort as sort,
+
+        t1.date_created as dateCreated, 
+        t1.create_id as createId, 
+        t1.create_ip as createIp, 
+        t1.date_updated as dateUpdated, 
+        t1.update_id as updateId, 
+        t1.update_ip as updateIp, 
+        t1.version as version,
+        t1.del_flag as delFlag
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="cn.com.softvan.model.wechat.WechatMenu" parameterType="java.lang.String" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_wechat_menu t1
+        where t1.id = #{id}
+    </select>
+
+    <select id="selectList" resultType="cn.com.softvan.model.wechat.WechatMenu" parameterType="cn.com.softvan.model.wechat.WechatMenu" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_wechat_menu t1
+        where t1.del_flag = '0'
+        <if test="parent != null">
+            and t1.parent = #{parent}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from t_wechat_menu
+        where id = #{id}
+    </delete>
+
+    <insert id="insert" parameterType="cn.com.softvan.model.wechat.WechatMenu" >
+        insert into t_wechat_menu (
+
+			`type`,
+			`name`,
+			`key`,
+			url,
+			media_id,
+			appid,
+			pagepath,
+			parent,
+			sort,
+
+            date_created, 
+            create_id, 
+            create_ip, 
+            date_updated, 
+            update_id, 
+            update_ip, 
+            version,
+            del_flag
+            )
+        values (
+
+			#{type},
+			#{name},
+			#{key},
+			#{url},
+			#{mediaId},
+			#{appid},
+			#{pagepath},
+			#{parent},
+			#{sort},
+
+            now(), 
+            #{createId}, 
+            #{createIp}, 
+            now(), 
+            #{updateId}, 
+            #{updateIp}, 
+            0,
+            0
+            )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.com.softvan.model.wechat.WechatMenu" >
+        update t_wechat_menu set 
+		<if test="type != null" >
+			`type` = #{type},
+		</if>
+		<if test="name != null" >
+			`name` = #{name},
+		</if>
+		<if test="key != null" >
+			`key` = #{key},
+		</if>
+		<if test="url != null" >
+			url = #{url},
+		</if>
+		<if test="mediaId != null" >
+			media_id = #{mediaId},
+		</if>
+		<if test="appid != null" >
+			appid = #{appid},
+		</if>
+		<if test="pagepath != null" >
+			pagepath = #{pagepath},
+		</if>
+		<if test="parent != null" >
+			parent = #{parent},
+		</if>
+		<if test="sort != null and sort != ''" >
+			sort = #{sort},
+		</if>
+
+        <if test="updateId != null" >
+            update_id = #{updateId},
+        </if>
+        <if test="updateIp != null" >
+            update_ip = #{updateIp},
+        </if>
+        <if test="delFlag != null" >
+            del_flag = #{delFlag},
+        </if>
+        version = version + 1,
+        date_updated = now()
+        where id = #{id}
+    </update>
+</mapper>

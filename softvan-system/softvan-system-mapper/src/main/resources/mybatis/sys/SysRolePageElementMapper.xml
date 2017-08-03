@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.com.softvan.dao.sys.SysRolePageElementMapper" >
+
+    <sql id="Base_Column_List" >
+        t1.id as id, 
+		t1.role_id as roleId,
+		t1.page_element_id as pageElementId,
+		t1.has_permit as hasPermit,
+
+        t1.date_created as dateCreated, 
+        t1.create_id as createId, 
+        t1.create_ip as createIp, 
+        t1.date_updated as dateUpdated, 
+        t1.update_id as updateId, 
+        t1.update_ip as updateIp, 
+        t1.version as version,
+        t1.del_flag as delFlag
+    </sql>
+
+    <select id="selectByPrimaryKey" resultType="cn.com.softvan.model.sys.SysRolePageElement" parameterType="java.lang.String" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_sys_role_page_element t1
+        where t1.id = #{id}
+    </select>
+
+    <select id="selectList" resultType="cn.com.softvan.model.sys.SysRolePageElement" parameterType="cn.com.softvan.model.sys.SysRolePageElement" >
+        select 
+        <include refid="Base_Column_List" />
+        from t_sys_role_page_element t1
+        where t1.del_flag = '0'
+        <if test="roleId != null">
+            and t1.role_id = #{roleId}
+        </if>
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+        delete from t_sys_role_page_element
+        where id = #{id}
+    </delete>
+
+    <!--根据角色id删除-->
+    <delete id="deleteByRoleId" parameterType="java.lang.String">
+        delete from t_sys_role_page_element where role_id = #{roleId}
+    </delete>
+
+    <insert id="insert" parameterType="cn.com.softvan.model.sys.SysRolePageElement" >
+        insert into t_sys_role_page_element (
+            id,
+			role_id,
+			page_element_id,
+			has_permit,
+
+            date_created, 
+            create_id, 
+            create_ip, 
+            date_updated, 
+            update_id, 
+            update_ip, 
+            version,
+            del_flag
+            )
+        values (
+            #{id},
+			#{roleId},
+			#{pageElementId},
+			#{hasPermit},
+
+            now(), 
+            #{createId}, 
+            #{createIp}, 
+            now(), 
+            #{updateId}, 
+            #{updateIp}, 
+            0,
+            0
+            )
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="cn.com.softvan.model.sys.SysRolePageElement" >
+        update t_sys_role_page_element set 
+		<if test="roleId != null" >
+			role_id = #{roleId},
+		</if>
+		<if test="pageElementId != null" >
+			page_element_id = #{pageElementId},
+		</if>
+		<if test="hasPermit != null" >
+			has_permit = #{hasPermit},
+		</if>
+
+        <if test="updateId != null" >
+            update_id = #{updateId},
+        </if>
+        <if test="updateIp != null" >
+            update_ip = #{updateIp},
+        </if>
+        <if test="delFlag != null" >
+            del_flag = #{delFlag},
+        </if>
+        version = version + 1,
+        date_updated = now()
+        where id = #{id}
+    </update>
+</mapper>

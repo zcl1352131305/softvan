@@ -1,0 +1,56 @@
+/*
+ * @ClassName ecModuleObjectNameServiceImpl
+ * @Description
+ * @version 1.0
+ * @Date ecModuleDate
+ */
+package ecModuleBasePackage.service.ecModulePackage.impl;
+
+import ecModuleBasePackage.dao.ecModulePackage.ecModuleObjectNameMapper;
+import ecModuleBasePackage.model.ecModulePackage.ecModuleObjectName;
+import ecModuleBasePackage.service.ecModulePackage.IecModuleObjectNameService;
+import com.github.pagehelper.PageHelper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class ecModuleObjectNameServiceImpl implements IecModuleObjectNameService{
+    @Autowired
+    private ecModuleObjectNameMapper ecModuleObjectNameFirstLowerMapper;
+
+    public int deleteById(ecModuleObjectName bean) throws Exception{
+        return ecModuleObjectNameFirstLowerMapper.deleteByPrimaryKey(bean.getId());
+    }
+
+    public int save(ecModuleObjectName bean) throws Exception{
+        ecModuleObjectName bean1 = ecModuleObjectNameFirstLowerMapper.selectByPrimaryKey(bean.getId());
+        if(null != bean1){
+            return 1;
+        }
+        else{
+            return ecModuleObjectNameFirstLowerMapper.insert(bean);
+        }
+    }
+
+    public int update(ecModuleObjectName bean) throws Exception{
+        return ecModuleObjectNameFirstLowerMapper.updateByPrimaryKeySelective(bean);
+    }
+
+    public ecModuleObjectName findDataById(ecModuleObjectName bean){
+        return ecModuleObjectNameFirstLowerMapper.selectByPrimaryKey(bean.getId());
+    }
+
+    public List<ecModuleObjectName> findDataIsPage(ecModuleObjectName bean) {
+        if(bean.getPage() != null && bean.getRows() != null){
+            PageHelper.startPage(bean.getPage(),bean.getRows());
+        }
+        return ecModuleObjectNameFirstLowerMapper.selectList(bean);
+    }
+
+    public List<ecModuleObjectName> findDataIsList(ecModuleObjectName bean) {
+        return ecModuleObjectNameFirstLowerMapper.selectList(bean);
+    }
+
+}

@@ -1,0 +1,19 @@
+/*
+ * @ClassName ecModuleObjectName
+ * @Description
+ * @version 1.0
+ * @Date ecModuleDate
+ */
+package ecModuleBasePackage.model.ecModulePackage;
+
+import ecModuleBasePackage.model.BaseBean;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class ecModuleObjectName extends BaseBean {
+ecModuleProperty
+}
